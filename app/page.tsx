@@ -12,7 +12,7 @@ export default function Home() {
   const handleNumberClick = (index: number) => {
     setNumbers(prev => {
       const newNumbers = [...prev];
-      newNumbers[index] = false; // 無効化
+      newNumbers[index] = !newNumbers[index]; // 状態を反転
       return newNumbers;
     });
   };
@@ -51,7 +51,6 @@ export default function Home() {
             <Button
               key={index}
               onClick={() => handleNumberClick(index)}
-              disabled={!isActive}
               sx={{
                 width: '100%',
                 aspectRatio: '1 / 1',
